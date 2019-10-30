@@ -61,8 +61,7 @@ class kNN():
         inputs x , y must be numpy arrays
         '''
         return np.sqrt(np.sum(np.square(x-y),axis=1))
-    
-            
+           
     def __getvotes(self, topk_labels):
         votes = {}
         for l in topk_labels:
@@ -96,12 +95,10 @@ class kNN():
         #compute euclidean distances 
         for i in range(n):    
             euclid_dist = self.__computeEuclideanDist(xTrain, xTest[i,:])
-            
             euclid_dist = euclid_dist.reshape((ntrain,1))
             
             #concatenating distances to xTrain
             full_set = np.concatenate((xTrain,yTrain),axis=1)
-    
             data_withdist = np.concatenate((full_set,euclid_dist),axis=1)
 
             #sort array in ascending order (i.e., so that smallest distances come first)
@@ -119,7 +116,6 @@ class kNN():
             pred_return = pred[0]
             
             predictions.append(pred_return)
-            
             predictions = np.asarray(predictions)
             
         return predictions
