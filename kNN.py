@@ -48,7 +48,6 @@ xTest_knn= std_scaler.fit_transform(xTest_knn.values)
 
 class kNN():
 
-
     def __init__(self, feature_training_set, feature_test_set, response_training_set, response_test_set, k):  
         self.xTrain = feature_training_set
         self.xTest = feature_test_set
@@ -72,17 +71,13 @@ class kNN():
             else:
                 votes[l] += 1        
         return votes
-        
-    
-    
+       
     def Fit_Predict(self):
-    
         '''
         Calculates distance metrics for all points in testing and classifes 
         the test point by majority voting 
     
         '''
-        
         xTrain = self.xTrain
         xTest  = self.xTest
         yTrain = self.yTrain
@@ -128,9 +123,9 @@ class kNN():
             predictions = np.asarray(predictions)
             
         return predictions
-        
-
-
+ 
+if __name__ == "__main__":           
+## Testing for different k's
 kvals=[2,3,5,9]
 
 for k in kvals:
